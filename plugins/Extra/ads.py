@@ -11,7 +11,7 @@ async def set_ads(client, message):
     try:
         command_args = message.text.split(maxsplit=1)[1]
         if '#' not in command_args or len(command_args.split('#')) < 3:
-            await message.reply_text(f"Usage: /set_ads {{ads name}}#{{time}}#{{photo URL}} <a href=https://t.me/Jisshu_developer/9>Explain</a>")
+            await message.reply_text(f"Usage: /set_ads {{ads name}}#{{time}}#{{photo URL}} <a href=https://t.me/me_miss_you/9>Explain</a>")
             return
 
         ads_name, duration_or_impression, url = command_args.split('#', 2)
@@ -23,7 +23,7 @@ async def set_ads(client, message):
             return
 
         if not re.match(r'https?://.+', url):
-            await message.reply_text(f"Invalid URL format. Use a valid Telegram link.")
+            await message.reply_text(f"Invalid URL format. Use a valid Telegram link baby.")
             return
 
         expiry_date = None
@@ -40,7 +40,7 @@ async def set_ads(client, message):
            
             impression = duration_or_impression[1:]
             if not impression.isdigit():
-                await message.reply_text(f"Impression count must be a number.")
+                await message.reply_text(f"Impression count must be a number baby.")
                 return
             impression_count = int(impression)
         else:
@@ -49,10 +49,10 @@ async def set_ads(client, message):
 
         reply = message.reply_to_message
         if not reply:
-            await message.reply_text(f"Reply to a message to set it as your advertisement.")
+            await message.reply_text(f"Reply to a message to set it as your advertisement baby.")
             return
         if not reply.text:
-            await message.reply_text(f"Only text messages are supported.")
+            await message.reply_text(f"Only text messages are supported baby.")
             return
 
        
@@ -71,7 +71,7 @@ async def ads(_, message):
     try:
         _, name, impression = await mdb.get_advirtisment()
         if not name:
-            await message.reply_text(f"No ads set.")
+            await message.reply_text(f"No ads set darling.")
             return
         if impression == 0:
             await message.reply_text(f"Advertisement: '{name}' has expired.")
@@ -98,8 +98,8 @@ async def del_ads(client, message):
             if is_deleted:
                 await message.reply(f"Successfully deleted advertisement and ads photo link: {current_link}!")
             else:
-                await message.reply("Advertisement reset, but stream link deletion failed. Stream link not found or something went wrong! Check logs")
+                await message.reply("Advertisement reset, but stream link deletion failed. Stream link not found or something went wrong! Check logs baby")
         else:
             await message.reply("Advertisement reset. ads photo link not found!")
     except Exception as e:
-        await message.reply(f"An error occurred: {str(e)}")
+        await message.reply(f"An error occurred baby: {str(e)}")
