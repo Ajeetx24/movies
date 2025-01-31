@@ -15,7 +15,7 @@ def is_enabled(value, default):
 SESSION = environ.get('SESSION', 'Media_search')
 API_ID = int(environ.get('API_ID', '24005775'))
 API_HASH = environ.get('API_HASH', 'e2593d8b0f5f52798926619defc21905')
-BOT_TOKEN = environ.get('BOT_TOKEN', '7745070653:AAFHqfYKF0_Ofv6Q-5I_hyp7kAJGvJohCds')
+BOT_TOKEN = environ.get('BOT_TOKEN', '')
 #---------------------------------------------------------------
 #---------------------------------------------------------------
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '5935267941').split()]
@@ -25,8 +25,8 @@ MOVIE_GROUP_LINK = environ.get('MOVIE_GROUP_LINK', 'https://t.me/+SIGYrkDQhhIwZj
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002486613099').split()]
 #---------------------------------------------------------------
 #---------------------------------------------------------------
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://RAJRC12:RAJRC12@rajrc123.iv7ul.mongodb.net/?retryWrites=true&w=majority&appName=RAJRC123")
-DATABASE_NAME = environ.get('DATABASE_NAME', "RAJRC123")
+DATABASE_URI = environ.get('DATABASE_URI', "")
+DATABASE_NAME = environ.get('DATABASE_NAME', "GROWTH")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 #---------------------------------------------------------------
 #---------------------------------------------------------------
